@@ -1,0 +1,51 @@
+wsl
+docker ps 
+docker run -it ubuntu bash
+docker ps -s
+docker history ubuntu
+docker rm': docker rm $(docker container ps -aq) -- force
+docker run -it -v ubuntu
+docker run it --mount type=bind, source=/home/danie/volume-docker,target=/app ubuntu bash
+docker run -it -v meu-volume:/app ubuntu bash
+docker run -it --mount source=meu-novo-volume,target=/app ubuntu bash
+docker run -it --tmpfs=/app ubunt bash
+docker inspect id 
+docker network
+
+docker network create --driver bridge minha-rede
+
+docker run -it --name ubuntu1 --network minha-rede ubuntu bash
+
+docker run -d --name pong --network minha-rede ubuntu sleep 1d
+
+apt-get update
+apt-get install iputils-ping -y
+
+
+docker compose
+
+docker images
+
+version: "3.9"
+services:
+  mongodb:
+    image: mongo:4.4.6
+    container_name: meu-mongo
+    networks:
+      - compose-bridge
+  
+  alurabooks:
+    image: aluradocker/alura-books:1.0
+    container_name: alurabooks
+    networks:
+      - compose-bridge
+    ports:
+      - 3000:3000
+
+networks:
+  compose-bridge:
+    driver: bridge
+
+exercício estabelecer conexão entre dois containers
+
+

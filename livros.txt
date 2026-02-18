@@ -1,0 +1,86 @@
+📚 Spring Boot (AVANÇADO) — Português
+⭐ 1. Spring Boot: Acelere o desenvolvimento de microsserviços
+
+Fernando Boaglio — Casa do Código (Atualizado 05/2024)
+👉 Esse é praticamente a bíblia do Spring Boot no Brasil
+
+Cobre:
+
+Spring Boot moderno (Java 17)
+
+APIs REST
+
+Spring Security
+
+Testes unitários e de integração
+
+Spring Cloud
+
+Docker Compose
+
+GraalVM (nativo)
+
+Microsserviços
+
+🔴 MUITO alinhado com o que pedem pra pleno.
+
+⭐ 2. Back-end Java: Microsserviços, Spring Boot e Kubernetes
+
+Eduardo Zambom Santana — Casa do Código
+
+Se você quer subir nível para pleno real, esse é ouro.
+
+Cobre:
+
+Arquitetura de microsserviços
+
+Comunicação entre serviços
+
+Docker
+
+Kubernetes
+
+Deploy
+
+Produção de verdade
+
+Isso é conteúdo de pleno/sênior.
+
+☕ Java Avançado — Português
+⭐ 3. Java Como Programar — Deitel & Deitel
+
+(Clássico, muito usado no Brasil)
+
+Bom para:
+
+Base sólida
+
+OO de verdade
+
+Estruturas
+
+Conceitos que caem em entrevista
+
+Muito recomendado pela comunidade brasileira.
+
+🧠 Para virar PLENO MAIS RÁPIDO (Arquitetura & Boas Práticas)
+
+Esses não são só Java, mas fazem MUITA diferença:
+
+⭐ 4. Refatoração — Martin Fowler (Português)
+
+Código limpo
+
+Dívida técnica
+
+Padrões reais de refatoração
+
+⭐ 5. Domain-Driven Design — Eric Evans (Português)
+
+Arquitetura de sistemas reais
+
+Linguagem ubíqua
+
+Modelagem de domínio
+
+(Recomendados com frequência por devs brasileiros para subir de nível)
