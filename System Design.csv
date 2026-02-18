@@ -1,0 +1,55 @@
+O que é System Design?,Processo de projetar sistemas escaláveis definindo componentes interações fluxos de dados e trade-offs.
+Qual o objetivo principal do System Design?,Criar sistemas escaláveis confiáveis e eficientes.
+System Design é mais sobre memorização ou raciocínio?,Raciocínio e trade-offs não memorização.
+Diferença entre latência e throughput?,Latência é tempo por requisição throughput é requisições por segundo.
+O que é escalabilidade vertical?,Aumentar recursos de uma única máquina.
+O que é escalabilidade horizontal?,Adicionar mais máquinas ao sistema.
+Qual tipo de escala é base de sistemas web modernos?,Escalabilidade horizontal.
+Por que sistemas distribuídos são complexos?,Porque envolvem múltiplas máquinas consistência e falhas parciais.
+O que é sharding?,Particionar dados entre múltiplos nós.
+O que é replicação?,Manter cópias de dados em vários servidores.
+Função de um load balancer?,Distribuir tráfego entre servidores.
+Por que usar cache?,Reduzir latência e carga no banco.
+Exemplo comum de cache?,Redis.
+Para que servem filas em arquitetura?,Processamento assíncrono e desacoplamento.
+Qual é o primeiro passo em um problema de System Design?,Entender requisitos e escopo.
+O que definir após requisitos?,Escala do sistema como QPS e usuários.
+O que é high level design?,Visão geral dos componentes principais.
+O que analisar após arquitetura básica?,Gargalos e trade-offs.
+Existe uma resposta única em System Design?,Não depende dos requisitos e contexto.
+O que diferencia engenheiros seniores em System Design?,Capacidade de discutir trade-offs e comunicar decisões.
+Por que não decorar arquiteturas prontas?,Porque cada problema tem restrições diferentes.
+Qual é um trade-off comum em sistemas?,Latência vs throughput.
+Por que consistência é difícil em sistemas distribuídos?,Porque dados estão em múltiplos nós.
+O que significa tolerância a falhas?,Sistema continuar funcionando mesmo com falhas.
+Qual é o foco principal em entrevistas de System Design?,Processo de raciocínio e comunicação.
+O que diferencia System Design sênior de júnior?,Foco em trade-offs custos escalabilidade e evolução do sistema.
+O que são requisitos não funcionais?,Latência disponibilidade consistência segurança e escalabilidade.
+Por que estimativas são importantes em System Design?,Guiam decisões de arquitetura e escala.
+O que é back-of-the-envelope estimation?,Estimativas rápidas aproximadas para dimensionar sistemas.
+O que é arquitetura em camadas?,Separação em edge aplicação dados e processamento assíncrono.
+O que significa serviço stateless?,Não mantém estado entre requisições.
+Por que stateless facilita escala?,Permite balanceamento e replicação simples.
+O que é cache write-through?,Escrita vai para cache e banco ao mesmo tempo.
+O que é cache write-back?,Escrita vai primeiro para cache e depois sincroniza com banco.
+O que é cache stampede?,Muitas requisições simultâneas após expiração de cache.
+Qual critério principal para escolher SQL vs NoSQL?,Access patterns e requisitos de consistência.
+O que é hot partition?,Shard recebendo tráfego desproporcional.
+O que é re-sharding?,Redistribuir dados entre shards.
+O que diz o CAP theorem?,Não é possível ter consistência disponibilidade e tolerância a partições simultaneamente.
+O que é consistência eventual?,Dados convergem ao longo do tempo.
+Diferença entre active-active e active-passive?,Active-active ambos ativos active-passive standby.
+Vantagem de comunicação assíncrona?,Maior resiliência e desacoplamento.
+Desvantagem de arquitetura orientada a eventos?,Maior complexidade operacional.
+O que é CQRS?,Separar leitura e escrita em modelos diferentes.
+O que é event sourcing?,Armazenar eventos como fonte de verdade.
+Quais são os três pilares da observabilidade?,Logs métricas e tracing.
+Por que observabilidade é crítica?,Permite detectar e diagnosticar problemas em produção.
+O que é single point of failure?,Componente cuja falha derruba o sistema.
+O que é circuit breaker?,Padrão que interrompe chamadas para evitar falhas em cascata.
+Por que idempotência é importante?,Permite retries seguros sem efeitos duplicados.
+O que significa design for failure?,Assumir que componentes vão falhar.
+Por que custo importa em System Design?,Arquiteturas escaláveis podem ser financeiramente inviáveis.
+Qual erro comum de iniciantes?,Over-engineering precoce.
+Qual caminho comum de evolução arquitetural?,Monólito para microservices progressivamente.
+O que entrevistadores avaliam em System Design?,Clareza raciocínio trade-offs e comunicação.
