@@ -28,3 +28,7 @@ cria commit apos resolver o conflito
 
 ISSUES
 SOLICITAÇÃO DE TAREFAS
+
+
+WORK FLOW PARA TESTES CI
+
