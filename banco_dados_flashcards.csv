@@ -1,0 +1,84 @@
+O que significa CRUD?;CRUD significa Create (Criar), Read (Ler), Update (Atualizar) e Delete (Deletar), as quatro operações básicas em bancos de dados.
+Qual o objetivo do CRUD?;Permitir manipular dados armazenados em um banco, criando, consultando, modificando e removendo registros.
+Qual operação CRUD corresponde ao INSERT no SQL?;Create (Criar).
+Qual operação CRUD corresponde ao SELECT no SQL?;Read (Ler).
+Qual operação CRUD corresponde ao UPDATE no SQL?;Update (Atualizar).
+Qual operação CRUD corresponde ao DELETE no SQL?;Delete (Remover).
+O que é Create no contexto de banco de dados?;Inserção de novos registros em uma tabela, geralmente usando INSERT.
+Exemplo básico de Create em SQL?;INSERT INTO usuarios (nome, email) VALUES ('Ana', '[ana@email.com](mailto:ana@email.com)');
+O que é Read em banco de dados?;Recuperar dados existentes usando consultas, normalmente com SELECT.
+Exemplo de Read em SQL?;SELECT * FROM usuarios WHERE id = 1;
+O que é Update em banco de dados?;Modificar dados existentes em registros armazenados.
+Exemplo de Update em SQL?;UPDATE usuarios SET nome = 'Maria' WHERE id = 1;
+O que é Delete em banco de dados?;Remover registros do banco de dados.
+Exemplo de Delete em SQL?;DELETE FROM usuarios WHERE id = 1;
+Qual risco comum ao usar DELETE sem WHERE?;Remover todos os registros da tabela.
+O que é um relacionamento em banco de dados?;Associação entre tabelas baseada em chaves primárias e estrangeiras.
+Por que usar relacionamentos?;Para normalizar dados, evitar redundância e manter integridade referencial.
+O que é chave primária (Primary Key)?;Campo único que identifica cada registro de uma tabela.
+Características de uma chave primária?;Única, não nula e imutável idealmente.
+O que é chave estrangeira (Foreign Key)?;Campo que referencia a chave primária de outra tabela.
+Qual o objetivo da chave estrangeira?;Garantir integridade referencial entre tabelas.
+O que é relacionamento 1:1?;Um registro de uma tabela se relaciona com exatamente um de outra.
+Exemplo de relacionamento 1:1?;Usuário e perfil detalhado.
+O que é relacionamento 1:N?;Um registro em uma tabela se relaciona com vários em outra.
+Exemplo de relacionamento 1:N?;Cliente e pedidos.
+O que é relacionamento N:N?;Muitos registros de uma tabela se relacionam com muitos de outra.
+Como implementar relacionamento N:N?;Usando tabela intermediária (tabela associativa).
+Exemplo de N:N?;Alunos e cursos com tabela matriculas.
+O que é integridade referencial?;Garantia de que relações entre tabelas permanecem válidas.
+O que acontece ao deletar um registro referenciado?;Pode falhar ou aplicar regras como CASCADE, SET NULL, etc.
+O que é ON DELETE CASCADE?;Remove automaticamente registros relacionados.
+O que é ON DELETE SET NULL?;Define a foreign key como NULL ao deletar o registro pai.
+O que é uma transação em banco de dados?;Conjunto de operações executadas como uma única unidade lógica.
+Qual objetivo das transações?;Garantir consistência e confiabilidade dos dados.
+Quando usar transações?;Quando múltiplas operações precisam ser atômicas (ex: transferência bancária).
+Exemplo de transação clássica?;Debitar de uma conta e creditar em outra.
+O que significa COMMIT?;Confirma permanentemente as alterações da transação.
+O que significa ROLLBACK?;Desfaz todas as alterações da transação.
+O que é BEGIN ou START TRANSACTION?;Inicia uma transação.
+O que é SAVEPOINT?;Marca intermediária para rollback parcial.
+Exemplo de uso de transação em SQL?;BEGIN; UPDATE contas SET saldo = saldo - 100 WHERE id = 1; UPDATE contas SET saldo = saldo + 100 WHERE id = 2; COMMIT;
+O que acontece se falhar antes do COMMIT?;A transação pode ser revertida com ROLLBACK.
+O que são propriedades ACID?;Conjunto de garantias que tornam transações confiáveis.
+Quais são as propriedades ACID?;Atomicidade, Consistência, Isolamento e Durabilidade.
+O que é Atomicidade?;A transação ocorre por completo ou não ocorre.
+Exemplo de atomicidade?;Transferência bancária não pode debitar sem creditar.
+O que é Consistência em ACID?;A transação leva o banco de um estado válido para outro estado válido.
+Exemplo de consistência?;Restrições e integridade não são violadas após commit.
+O que é Isolamento em ACID?;Transações concorrentes não interferem indevidamente umas nas outras.
+Problema que isolamento resolve?;Leituras sujas, leituras não repetíveis e fantasmas.
+O que é Durabilidade?;Após commit, os dados permanecem mesmo em falhas de sistema.
+Como garantir durabilidade?;Logs de transação, backups e armazenamento persistente.
+O que é leitura suja (dirty read)?;Ler dados de uma transação ainda não confirmada.
+O que é leitura não repetível?;Ler o mesmo dado duas vezes e obter valores diferentes.
+O que é phantom read?;Novas linhas aparecem em consultas repetidas dentro da mesma transação.
+O que são níveis de isolamento?;Configurações que controlam o grau de isolamento entre transações.
+Quais níveis de isolamento comuns?;Read Uncommitted, Read Committed, Repeatable Read, Serializable.
+O que é Read Uncommitted?;Permite leitura suja.
+O que é Read Committed?;Permite apenas dados confirmados.
+O que é Repeatable Read?;Evita leituras não repetíveis.
+O que é Serializable?;Maior isolamento, simula execução sequencial.
+Trade-off do Serializable?;Maior segurança com menor desempenho.
+O que é controle de concorrência?;Técnicas para gerenciar múltiplas transações simultâneas.
+Exemplo de técnica de concorrência?;Locking (bloqueios).
+O que é lock pessimista?;Bloqueia recursos antecipadamente para evitar conflitos.
+O que é lock otimista?;Permite concorrência e valida conflitos no final.
+O que é log de transação?;Registro sequencial de alterações usadas para recuperação.
+Por que logs são importantes?;Permitem rollback e recuperação após falhas.
+O que é checkpoint em banco?;Ponto onde estado atual é gravado para acelerar recuperação.
+O que é WAL (Write-Ahead Logging)?;Registrar alterações no log antes de aplicá-las no banco.
+Diferença entre rollback e undo?;Rollback desfaz uma transação inteira, undo pode desfazer operações específicas.
+O que é consistência eventual?;Modelo onde dados podem ficar temporariamente inconsistentes mas convergem depois.
+ACID é mais comum em quais bancos?;Bancos relacionais tradicionais.
+Qual alternativa ao ACID em NoSQL?;BASE (Basically Available, Soft state, Eventually consistent).
+Quando preferir ACID?;Sistemas financeiros, transações críticas.
+Quando relaxar ACID?;Sistemas distribuídos de alta escala.
+Relação entre normalização e relacionamentos?;Normalização usa relacionamentos para reduzir redundância.
+O que é desnormalização?;Duplicar dados para melhorar performance de leitura.
+CRUD é apenas de SQL?;Não, também se aplica a APIs, ORMs e NoSQL.
+CRUD em REST?;POST (Create), GET (Read), PUT/PATCH (Update), DELETE (Delete).
+Como ORMs usam CRUD?;Mapeiam objetos da aplicação para operações no banco.
+Por que dominar CRUD é importante?;Base de qualquer sistema que persiste dados.
+Por que entender ACID é importante?;Evita bugs críticos e corrupção de dados.
+Por que aprender transações ajuda na carreira?;Permite construir sistemas confiáveis e escaláveis.

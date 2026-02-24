@@ -1,0 +1,118 @@
+O que é normalização em banco de dados?;Processo de organizar tabelas para reduzir redundância e evitar anomalias de dados.
+Objetivo da normalização?;Eliminar redundância, garantir consistência e facilitar manutenção.
+O que são formas normais?;Regras que definem níveis de normalização de tabelas.
+O que é Primeira Forma Normal (1FN)?;Elimina atributos multivalorados e garante atomicidade dos campos.
+Regra principal da 1FN?;Cada campo deve conter um único valor indivisível.
+Exemplo de violação da 1FN?;Coluna com lista de telefones separados por vírgula.
+Como corrigir 1FN?;Criar tabela separada para valores repetidos.
+O que é Segunda Forma Normal (2FN)?;Remove dependências parciais em chaves compostas.
+Quando a 2FN se aplica?;Quando existe chave primária composta.
+O que é dependência parcial?;Quando um atributo depende apenas de parte da chave.
+Como atingir 2FN?;Separar atributos que dependem parcialmente em outra tabela.
+O que é Terceira Forma Normal (3FN)?;Remove dependências transitivas.
+O que é dependência transitiva?;Campo depende de outro campo não-chave.
+Exemplo de dependência transitiva?;ID -> CEP -> Cidade.
+Como atingir 3FN?;Mover atributos transitivos para nova tabela.
+O que é BCNF (Boyce-Codd Normal Form)?;Versão mais rigorosa da 3FN.
+Diferença entre 3FN e BCNF?;BCNF exige que todo determinante seja chave candidata.
+Quando usar BCNF?;Sistemas críticos com forte integridade.
+O que são anomalias de inserção?;Não conseguir inserir dados sem outras informações.
+O que são anomalias de atualização?;Necessidade de atualizar dados duplicados.
+O que são anomalias de exclusão?;Perda de dados importantes ao deletar registros.
+O que é desnormalização?;Introduzir redundância proposital para melhorar performance.
+Quando desnormalizar?;Sistemas analíticos ou alta performance de leitura.
+O que é índice em banco de dados?;Estrutura que acelera consultas em colunas específicas.
+Analogia de índice?;Índice de livro que aponta rapidamente para páginas.
+Benefício principal dos índices?;Melhorar performance de SELECT.
+Custo dos índices?;Aumentam uso de armazenamento e custo de INSERT/UPDATE.
+O que é índice primário?;Criado automaticamente pela chave primária.
+O que é índice único (UNIQUE)?;Garante valores únicos na coluna.
+O que é índice composto?;Índice com múltiplas colunas.
+Quando usar índice composto?;Consultas com múltiplas colunas no WHERE.
+O que é índice clustered?;Define a ordem física dos dados (InnoDB usa PK).
+O que é índice non-clustered?;Índice separado dos dados físicos.
+O que é índice FULLTEXT?;Para buscas textuais complexas.
+O que é índice HASH?;Baseado em hash, comum em memória.
+Quando evitar índices?;Tabelas pequenas ou com muitas escritas.
+Comando para criar índice no MySQL?;CREATE INDEX idx_nome ON tabela(coluna);
+Criar índice único?;CREATE UNIQUE INDEX idx_nome ON tabela(coluna);
+Remover índice?;DROP INDEX idx_nome ON tabela;
+O que é JOIN?;Operação que combina dados de múltiplas tabelas.
+Objetivo dos JOINs?;Consultar dados relacionados em tabelas diferentes.
+O que é INNER JOIN?;Retorna apenas registros com correspondência em ambas as tabelas.
+Exemplo INNER JOIN?;SELECT * FROM pedidos INNER JOIN clientes ON pedidos.cliente_id = clientes.id;
+O que é LEFT JOIN?;Retorna todos da esquerda e correspondentes da direita.
+O que é RIGHT JOIN?;Retorna todos da direita e correspondentes da esquerda.
+O que é FULL JOIN?;Retorna todos de ambas as tabelas (não nativo no MySQL).
+Como simular FULL JOIN no MySQL?;Usando UNION entre LEFT e RIGHT JOIN.
+O que é CROSS JOIN?;Produto cartesiano entre tabelas.
+Risco do CROSS JOIN?;Explosão de resultados.
+O que é SELF JOIN?;Tabela relacionada com ela mesma.
+Exemplo de SELF JOIN?;Hierarquia de funcionários.
+Diferença entre JOIN e subquery?;JOIN geralmente mais performático e legível.
+O que é NATURAL JOIN?;Join automático por colunas com mesmo nome (evitar).
+Qual JOIN mais usado?;INNER JOIN e LEFT JOIN.
+Comando para criar banco no MySQL?;CREATE DATABASE nome;
+Selecionar banco?;USE nome;
+Apagar banco?;DROP DATABASE nome;
+Criar tabela?;CREATE TABLE nome (...);
+Apagar tabela?;DROP TABLE nome;
+Ver tabelas?;SHOW TABLES;
+Ver estrutura da tabela?;DESCRIBE tabela;
+Inserir dados?;INSERT INTO tabela (...) VALUES (...);
+Inserir múltiplos registros?;INSERT INTO tabela VALUES (...), (...);
+Consultar dados?;SELECT * FROM tabela;
+Atualizar dados?;UPDATE tabela SET coluna = valor WHERE condição;
+Deletar dados?;DELETE FROM tabela WHERE condição;
+Truncar tabela?;TRUNCATE TABLE tabela;
+Diferença DELETE vs TRUNCATE?;DELETE é transacional, TRUNCATE é mais rápido e reinicia auto_increment.
+Adicionar coluna?;ALTER TABLE tabela ADD coluna tipo;
+Modificar coluna?;ALTER TABLE tabela MODIFY coluna tipo;
+Renomear coluna?;ALTER TABLE tabela RENAME COLUMN antigo TO novo;
+Remover coluna?;ALTER TABLE tabela DROP coluna;
+Adicionar chave primária?;ALTER TABLE tabela ADD PRIMARY KEY (coluna);
+Adicionar foreign key?;ALTER TABLE tabela ADD CONSTRAINT fk FOREIGN KEY (coluna) REFERENCES outra(id);
+Criar índice?;CREATE INDEX idx ON tabela(coluna);
+Criar view?;CREATE VIEW nome AS SELECT ...;
+Remover view?;DROP VIEW nome;
+Criar usuário?;CREATE USER 'user'@'host' IDENTIFIED BY 'senha';
+Dar permissões?;GRANT ALL PRIVILEGES ON db.* TO 'user'@'host';
+Remover permissões?;REVOKE ALL PRIVILEGES ON db.* FROM 'user'@'host';
+Atualizar permissões?;FLUSH PRIVILEGES;
+O que é ORDER BY?;Ordena resultados.
+O que é GROUP BY?;Agrupa resultados.
+O que é HAVING?;Filtro aplicado após GROUP BY.
+Diferença WHERE vs HAVING?;WHERE filtra antes do agrupamento, HAVING depois.
+O que é LIMIT?;Limita quantidade de resultados.
+O que é OFFSET?;Pula resultados iniciais.
+Ordem lógica de execução do SQL?;FROM -> JOIN -> WHERE -> GROUP BY -> HAVING -> SELECT -> ORDER BY -> LIMIT.
+Primeiro passo da execução SQL?;FROM (definição da fonte de dados).
+Quando JOIN é executado?;Logo após FROM.
+Quando WHERE é aplicado?;Após JOIN, antes de agrupamento.
+Quando GROUP BY ocorre?;Após filtros WHERE.
+Quando HAVING ocorre?;Após agrupamento.
+Quando SELECT é avaliado?;Após HAVING.
+Quando ORDER BY ocorre?;Após SELECT.
+Quando LIMIT ocorre?;Última etapa.
+Ordem de escrita SQL é igual à execução?;Não, a execução é diferente da ordem escrita.
+Ordem escrita comum SQL?;SELECT -> FROM -> JOIN -> WHERE -> GROUP BY -> HAVING -> ORDER BY -> LIMIT.
+Por que saber ordem SQL é importante?;Evita erros lógicos e melhora performance.
+O que é alias em SQL?;Nome temporário para tabela ou coluna.
+Exemplo de alias?;SELECT u.nome FROM usuarios u;
+O que é subquery?;Consulta dentro de outra consulta.
+O que é CTE?;Common Table Expression usando WITH.
+O que é EXPLAIN no MySQL?;Mostra plano de execução da query.
+Por que usar EXPLAIN?;Otimizar performance.
+O que é cardinalidade?;Número de valores únicos em coluna.
+Alta cardinalidade é boa para índices?;Sim, melhora eficiência.
+O que é scan completo (full table scan)?;Leitura completa da tabela.
+Como evitar full scan?;Usando índices adequados.
+O que é covering index?;Índice que contém todos os campos necessários da query.
+O que é composite index order?;A ordem das colunas no índice importa.
+Regra do índice composto?;Funciona melhor com prefixo mais usado.
+O que é query otimizada?;Consulta com menor custo de execução.
+Como melhorar queries?;Índices, evitar SELECT *, usar joins corretos.
+Por que SELECT * é ruim?;Traz dados desnecessários e reduz performance.
+Boa prática com índices?;Indexar colunas usadas em WHERE e JOIN.
+Boa prática com JOIN?;Sempre usar ON claro e evitar ambiguidades.
+Boa prática geral SQL?;Normalizar primeiro, otimizar depois.
